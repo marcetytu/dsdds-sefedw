@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Palabra de Dios - Complete</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(-45deg, #FF6B9D, #FFA500, #FFD700, #00D4FF, #7C3AED, #FF1493);
+            background-size: 600% 600%;
+            animation: gradientAnimation 20s ease infinite;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 50% 0%; }
+            75% { background-position: 100% 100%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Cascada de símbolos cristianos */
+        .cascada {
+            position: absolute;
+            top: -50px;
+            font-size: 3em;
+            opacity: 0.7;
+            animation: caer linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes caer {
+            0% {
+                transform: translateY(-50px) rotateZ(0deg);
+                opacity: 0.8;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(100vh) rotateZ(360deg);
+                opacity: 0;
+            }
+        }
+
+        .cascada1 { left: 5%; animation-duration: 8s; animation-delay: 0s; }
+        .cascada2 { left: 15%; animation-duration: 9s; animation-delay: 1s; }
+        .cascada3 { left: 25%; animation-duration: 8.5s; animation-delay: 2s; }
+        .cascada4 { left: 35%; animation-duration: 9.5s; animation-delay: 0.5s; }
+        .cascada5 { left: 45%; animation-duration: 8s; animation-delay: 1.5s; }
+        .cascada6 { left: 55%; animation-duration: 9s; animation-delay: 2.5s; }
+        .cascada7 { left: 65%; animation-duration: 8.5s; animation-delay: 0.3s; }
+        .cascada8 { left: 75%; animation-duration: 9.5s; animation-delay: 1.8s; }
+        .cascada9 { left: 85%; animation-duration: 8s; animation-delay: 2.2s; }
+        .cascada10 { left: 95%; animation-duration: 9s; animation-delay: 0.8s; }
+
+        .main-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-wrapper {
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 10;
+            animation: slideUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 3px solid #FF6B9D;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title {
+            font-size: 2.5em;
+            background: linear-gradient(135deg, #FF6B9D 0%, #7C3AED 50%, #00D4FF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            text-align: center;
+            animation: fadeInScale 1s ease-out;
+            font-weight: bold;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .verse-container {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border-left: 5px solid #FF6B9D;
+            border-right: 5px solid #7C3AED;
+            animation: slideInLeft 0.8s ease-out;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .verse-text {
+            font-size: 1.4em;
+            color: #333;
+            line-height: 1.8;
+            font-style: italic;
+            animation: typewriter 3s steps(100, end);
+            min-height: 80px;
+        }
+
+        @keyframes typewriter {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .verse-reference {
+            text-align: right;
+            color: #FF6B9D;
+            font-size: 0.95em;
+            margin-top: 15px;
+            font-weight: bold;
+            animation: slideInRight 1.2s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .explanation-container {
+            background: linear-gradient(135deg, rgba(255, 107, 157, 0.2) 0%, rgba(255, 165, 0, 0.2) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #FF6B9D;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .explanation-container.active {
+            max-height: 800px;
+            opacity: 1;
+            animation: expandDown 0.6s ease-out;
+        }
+
+        @keyframes expandDown {
+            from {
+                max-height: 0;
+                opacity: 0;
+            }
+            to {
+                max-height: 800px;
+                opacity: 1;
+            }
+        }
+
+        .explanation-title {
+            color: #FF6B9D;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .explanation-text {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.7;
+            animation: fadeIn 1s ease-out;
+            margin-bottom: 15px;
+        }
+
+        .response-box {
+            background: rgba(255, 255, 255, 0.6);
+            border-left: 4px solid #00D4FF;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-style: italic;
+            color: #333;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .prayer-container {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #00D4FF;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .prayer-container.active {
+            max-height: 600px;
+            opacity: 1;
+            animation: expandDown 0.6s ease-out;
+        }
+
+        .prayer-title {
+            color: #00D4FF;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .prayer-text {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.9;
+            font-style: italic;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FF6B9D 0%, #FF1493 100%);
+            color: white;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #7C3AED 0%, #6366F1 100%);
+            color: white;
+            animation: slideInUp 0.8s ease-out 0.3s both;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.6);
+        }
+
+        .btn-tertiary {
+            background: linear-gradient(135deg, #00D4FF 0%, #00B4D8 100%);
+            color: white;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
+
+        .btn-tertiary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.6);
+        }
+
+        .pulse-icon {
+            display: inline-block;
+            margin-right: 8px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .heart-animation {
+            position: fixed;
+            font-size: 2em;
+            pointer-events: none;
+            z-index: 1000;
+            filter: drop-shadow(0 0 8px rgba(255, 107, 157, 0.8));
+        }
+
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(0.5) rotateZ(360deg);
+            }
+        }
+
+        .status-bar {
+            text-align: center;
+            background: linear-gradient(135deg, #FF6B9D 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 0.9em;
+            margin-top: 20px;
+            animation: fadeIn 1.5s ease-out;
+            font-weight: bold;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #FF6B9D;
+            border-top: 3px solid transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Cascada de símbolos cristianos -->
+        <div class="cascada cascada1">📖</div>
+        <div class="cascada cascada2">✝️</div>
+        <div class="cascada cascada3">📖</div>
+        <div class="cascada cascada4">🕊️</div>
+        <div class="cascada cascada5">📖</div>
+        <div class="cascada cascada6">✝️</div>
+        <div class="cascada cascada7">❤️</div>
+        <div class="cascada cascada8">📖</div>
+        <div class="cascada cascada9">🙏</div>
+        <div class="cascada cascada10">✝️</div>
+
+        <!-- Contenido principal -->
+        <div class="content-wrapper">
+            <h1 class="title">✨ La Palabra de Dios ✨</h1>
+
+            <div class="verse-container">
+                <div>
+                    <div class="verse-text" id="verseText"><span class="loading-spinner"></span>Cargando versículos...</div>
+                    <div class="verse-reference" id="verseReference">Por favor espera...</div>
+                </div>
+            </div>
+
+            <div class="explanation-container" id="explanationContainer">
+                <div class="explanation-title">📖 Explicación:</div>
+                <div class="explanation-text" id="explanationText"></div>
+                <div class="response-box" id="responseBox"></div>
+            </div>
+
+            <div class="prayer-container" id="prayerContainer">
+                <div class="prayer-title">🙏 Oración para ti:</div>
+                <div class="prayer-text" id="prayerText"></div>
+            </div>
+
+            <div class="buttons-container">
+                <button class="btn btn-primary" onclick="toggleExplanation()">
+                    <span class="pulse-icon">💡</span>Explícame
+                </button>
+                <button class="btn btn-secondary" onclick="togglePrayer()">
+                    <span class="pulse-icon">🙏</span>Mi Oración
+                </button>
+                <button class="btn btn-tertiary" onclick="loadNewVerse()">
+                    <span class="pulse-icon">✨</span>Nuevo Versículo
+                </button>
+            </div>
+
+            <div class="status-bar" id="statusBar">
+                Cargando base de datos bíblica...
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allVerses = [];
+        let currentVerse = null;
+
+        // Temas y palabras clave para análisis inteligente
+        const themes = {
+            'amor': { keywords: ['amor', 'amado', 'amar', 'aman', 'amó', 'amaos'] },
+            'fe': { keywords: ['fe', 'creer', 'cree', 'fiel', 'confianza'] },
+            'esperanza': { keywords: ['esperanza', 'esperar', 'promesa', 'futuro'] },
+            'paz': { keywords: ['paz', 'tranquilo', 'calma', 'descanso', 'reposo'] },
+            'gracia': { keywords: ['gracia', 'gratuito', 'regalo', 'don'] },
+            'salvación': { keywords: ['salvación', 'salvo', 'redención', 'eterno'] },
+            'sabiduría': { keywords: ['sabiduría', 'prudencia', 'consejo', 'enseñanza'] },
+            'justicia': { keywords: ['justicia', 'juicio', 'recto', 'verdad'] },
+            'vida': { keywords: ['vida', 'vivir', 'vivo', 'viviente'] },
+            'luz': { keywords: ['luz', 'brilla', 'claridad', 'luminoso'] },
+            'poder': { keywords: ['poder', 'fuerte', 'fortaleza'] },
+            'gozo': { keywords: ['gozo', 'alegría', 'felicidad', 'dicha'] }
+        };
+
+        // Explicaciones automáticas por tema
+        const explanations = {
+            'amor': 'Este versículo habla del amor divino, que es el fundamento de toda la creación. Dios nos ama incondicionalmente y nos llama a amar a otros de la misma manera.',
+            'fe': 'La fe es confianza en Dios a pesar de las circunstancias. Este versículo invita a creer en las promesas divinas, incluso sin evidencia inmediata.',
+            'esperanza': 'La esperanza cristiana es confianza firme en el plan de Dios. Este versículo motiva a esperar en Él en todo tiempo.',
+            'paz': 'Dios ofrece una paz que sobrepasa todo entendimiento. Esta paz viene de confiar en que Él está en control.',
+            'gracia': 'La gracia es el favor inmerecido de Dios. No podemos ganarnos su amor, solo recibirlo con gratitud.',
+            'salvación': 'A través de Jesucristo experimentamos redención y vida eterna. Este versículo proclama esperanza para todos.',
+            'sabiduría': 'La sabiduría verdadera viene de conocer a Dios. Este versículo anima a buscar el consejo divino.',
+            'justicia': 'Dios es perfectamente justo. Este versículo desafía a vivir con integridad y confiar en su juicio.',
+            'vida': 'Jesucristo es la vida. Este versículo habla de la calidad de vida en relación con Dios.',
+            'luz': 'Jesús es la luz del mundo. Este versículo invita a vivir en claridad espiritual.',
+            'poder': 'Este versículo habla del poder de Dios disponible para nosotros en cada momento.',
+            'gozo': 'El gozo es alegría profunda que no depende de las circunstancias, sino de nuestra fe en Dios.'
+        };
+
+        // Respuestas automáticas inteligentes
+        const responses = [
+            '¡Qué verdad tan poderosa! Esta enseñanza transforma corazones cuando la recibimos con fe.',
+            'Esta palabra llega al corazón porque fue escrita para ti. Reflexiona en cómo aplica a tu vida.',
+            '¡Cuánta sabiduría divina! Permite que penetre en lo profundo de tu ser.',
+            'Un recordatorio de la bondad infinita de Dios hacia nosotros. ¡Que impacte tu día!',
+            'La palabra de Dios es viva y eficaz. Tiene poder para sanar, restaurar y transformar.',
+            'En estas palabras vemos el amor y propósito de Dios revelados para tu vida.',
+            'Una invitación personal de Dios. ¡Responde con todo tu corazón!',
+            'Dios habla a través de su palabra. Escucha lo que te dice hoy.',
+            'Guarda este versículo en tu corazón y déjate transformar por él.',
+            'Este mensaje nos recuerda quiénes somos en Cristo y nuestro verdadero propósito.'
+        ];
+
+        // Oraciones personalizadas
+        const prayers = [
+            'Señor, que esta palabra penetre profundamente en mi corazón. Ayúdame a vivirla cada día.',
+            'Dios todopoderoso, agradezco tu palabra que me guía. Que viva conforme a tu verdad.',
+            'Padre celestial, abre mis oídos. Que esta enseñanza sea luz en mi camino.',
+            'Jesús, ayúdame a comprender y vivir esta verdad. Transforma mi vida.',
+            'Espíritu Santo, ilumina mi entendimiento. Que reciba esta palabra con fe.',
+            'Dios, reconozco tu autoridad en mi vida. Que tu palabra sea mi guía.',
+            'Dios de amor, gracias por tu palabra que sana y restaura. Confío en ti.',
+            'Señor, que esta verdad sea mi fortaleza en dificultades y mi gozo en paz.',
+            'Padre amado, ayúdame a reflejar esta enseñanza para otros.',
+            'Dios eterno, que tu palabra produzca abundante fruto en mi vida.'
+        ];
+
+        // Detectar tema del versículo
+        function detectTheme(verseText) {
+            const text = verseText.toLowerCase();
+            let maxMatches = 0;
+            let detectedTheme = 'vida';
+
+            for (let [theme, themeData] of Object.entries(themes)) {
+                let matches = 0;
+                themeData.keywords.forEach(keyword => {
+                    const count = (text.match(new RegExp(keyword, 'g')) || []).length;
+                    matches += count;
+                });
+                if (matches > maxMatches) {
+                    maxMatches = matches;
+                    detectedTheme = theme;
+                }
+            }
+            return detectedTheme;
+        }
+
+        // Generar explicación inteligente
+        function generateExplanation(verseText) {
+            const theme = detectTheme(verseText);
+            return explanations[theme] || explanations['vida'];
+        }
+
+        // Generar respuesta
+        function generateResponse() {
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        // Generar oración
+        function generatePrayer() {
+            return prayers[Math.floor(Math.random() * prayers.length)];
+        }
+
+        // Cargar versículos desde localStorage o versículos por defecto
+        async function initializeVerses() {
+            const cachedVerses = localStorage.getItem('bibliaCompleta');
+            
+            if (cachedVerses) {
+                allVerses = JSON.parse(cachedVerses);
+            } else {
+                // Versículos por defecto si no hay datos cargados
+                allVerses = [
+                    { book: 'Génesis', chapter: 1, verse: 1, text: 'En el principio creó Dios los cielos y la tierra.' },
+                    { book: 'Génesis', chapter: 1, verse: 27, text: 'Y creó Dios al hombre a su imagen, a imagen de Dios lo creó; varón y hembra los creó.' },
+                    { book: 'Salmos', chapter: 23, verse: 1, text: 'Jehová es mi pastor; nada me faltará.' },
+                    { book: 'Proverbios', chapter: 3, verse: 5, text: 'Confía en Jehová de todo tu corazón, y no en tu propia inteligencia.' },
+                    { book: 'Juan', chapter: 3, verse: 16, text: 'Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree, no se pierda, mas tenga vida eterna.' },
+                    { book: 'Romanos', chapter: 8, verse: 28, text: 'Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien, esto es, a los que conforme a su propósito son llamados.' },
+                    { book: 'Filipenses', chapter: 4, verse: 13, text: 'Todo lo puedo en Cristo que me fortalece.' },
+                    { book: 'Mateo', chapter: 11, verse: 28, text: 'Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar.' },
+                    { book: 'Jeremías', chapter: 29, verse: 11, text: 'Porque yo sé los pensamientos que tengo acerca de vosotros, dice Jehová, pensamientos de paz, y no de mal, para daros el fin que esperáis.' },
+                    { book: '1 Pedro', chapter: 5, verse: 7, text: 'Echando toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.' }
+                ];
+            }
+
+            loadNewVerse();
+        }
+
+        // Cargar nuevo versículo
+        function loadNewVerse() {
+            if (allVerses.length === 0) return;
+
+            const randomVerse = allVerses[Math.floor(Math.random() * allVerses.length)];
+            currentVerse = randomVerse;
+
+            const explanation = generateExplanation(randomVerse.text);
+            const response = generateResponse();
+            const prayer = generatePrayer();
+
+            currentVerse.explanation = explanation;
+            currentVerse.response = response;
+            currentVerse.prayer = prayer;
+
+            document.getElementById('verseText').textContent = `"${randomVerse.text}"`;
+            document.getElementById('verseReference').textContent = `~ ${randomVerse.book} ${randomVerse.chapter}:${randomVerse.verse}`;
+
+            document.getElementById('explanationContainer').classList.remove('active');
+            document.getElementById('prayerContainer').classList.remove('active');
+
+            createHeartBurst();
+        }
+
+        // Alternar explicación
+        function toggleExplanation() {
+            const container = document.getElementById('explanationContainer');
+            
+            if (!container.classList.contains('active')) {
+                document.getElementById('explanationText').textContent = currentVerse.explanation;
+                document.getElementById('responseBox').textContent = `💫 ${currentVerse.response}`;
+                container.classList.add('active');
+                createHeartBurst();
+            } else {
+                container.classList.remove('active');
+            }
+        }
+
+        // Alternar oración
+        function togglePrayer() {
+            const container = document.getElementById('prayerContainer');
+            
+            if (!container.classList.contains('active')) {
+                document.getElementById('prayerText').textContent = currentVerse.prayer;
+                container.classList.add('active');
+                createHeartBurst();
+            } else {
+                container.classList.remove('active');
+            }
+        }
+
+        // Crear explosión de corazones
+        function createHeartBurst() {
+            const emotions = ['❤️', '💕', '💖', '💗', '✨', '🙏', '💫', '🕊️'];
+            
+            for (let i = 0; i < 12; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart-animation';
+                heart.textContent = emotions[Math.floor(Math.random() * emotions.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.fontSize = (1 + Math.random() * 2) + 'em';
+                heart.style.animation = `floatUp ${1 + Math.random() * 1.5}s ease-out forwards`;
+                
+                document.body.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 2500);
+            }
+        }
+
+        // Crear cascada continua
+        function createContinuousCascade() {
+            const symbols = ['📖', '✝️', '🕊️', '❤️', '🙏', '💒', '⛪', '📿'];
+            const mainContainer = document.querySelector('.main-container');
+
+            setInterval(() => {
+                const cascada = document.createElement('div');
+                cascada.className = 'cascada';
+                cascada.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                cascada.style.left = Math.random() * 100 + '%';
+                cascada.style.animationDuration = (7 + Math.random() * 3) + 's';
+                cascada.style.animationDelay = '0s';
+
+                mainContainer.appendChild(cascada);
+
+                setTimeout(() => cascada.remove(), 10000);
+            }, 200);
+        }
+
+        // Inicializar
+        window.addEventListener('DOMContentLoaded', () => {
+            createContinuousCascade();
+            initializeVerses();
+            
+            // Actualizar status bar con cantidad de versículos
+            document.getElementById('statusBar').textContent = `✨ Total de versículos disponibles: ${allVerses.length}`;
+        });
+    </script>
+</body>
+</html>
